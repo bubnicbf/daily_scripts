@@ -1,14 +1,14 @@
 ---
 layout: default
-title: 我的Blog
+title: Blog Example
 ---
 
 <h2>{{ page.title }}</h2>
 
-<p>最新文章</p>
+<p>Recent Articles</p>
 
 <ul>
     {% for post in site.posts %}
-      <li>{{ post.date | date_to_string }} <a href="{{ post.url }}">{{ post.title }}</a></li>
+      <li>{{ post.date }} <a href="{{ post.url }}">{{ post.title }}</a></li>
     {% endfor %}
 </ul>
