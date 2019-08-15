@@ -8,6 +8,7 @@ echo "
     gitgauss
     gitp410
     gitp714
+    gitp821
     gitphys
     gitrunge
     gitrta
