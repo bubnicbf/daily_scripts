@@ -11,6 +11,5 @@ echo "
     gitp821
     gitphys
     gitrunge
-    gitrta
     gitzams
     "
