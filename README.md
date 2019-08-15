@@ -1,2 +1,2 @@
-# daily_scripts
-stuff I schedule or run a lot 
+# bash-scripts
+usage bash scripts and snippets of code.
