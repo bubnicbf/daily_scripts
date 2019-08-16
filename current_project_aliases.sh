@@ -5,7 +5,6 @@ echo "
     gitdaily
     gitessay
     gitexoem
-    gitgauss
     gitp410
     gitp714
     gitp821
