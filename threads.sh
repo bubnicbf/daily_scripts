@@ -9,7 +9,7 @@ MYNAME="${0##*/}"
 CURDIR=$(cd "$(dirname "$0")"; pwd);
 
 g_HOST_LIST=$1
-g_THREAD_NUM=300
+g_THREAD_NUM=30
 g_PORT=22
 g_LIMIT=0
 TMPFILE="pipe.$$"
@@ -42,6 +42,25 @@ _print_fatal() {
     echo $(_hl_red '==>') "$@" >&2
 }
 
+_is_number() {
+    local re='^[0-9]+$'
+    local number="$1"
+
+    if [ "x$number" == "x" ]; then
+        _print_fatal "error: _is_number need one parameter"
+        exit 1
+    else
+        number=${number//[[:space:]]/}
+    fi
+
+    if ! [[ $number =~ $re ]] ; then
+        _print_fatal "error: ${number} not a number" >&2
+        exit 1
+    else
+        return 0
+    fi
+}
+
 _usage() {
     cat << USAGE
 Usage: bash ${MYNAME} [options] hostlist command.
@@ -49,8 +68,8 @@ Usage: bash ${MYNAME} [options] hostlist command.
 Options:
     -c, --concurrent num  Thread Nummber for run the command at same time, default: 1.
     -s, --ssh             Use ssh authorized_keys to login without password query from DB.
-    -p, --port            Use port instead of defult port:22.
-    -l, --limit           Limit num for host to run when limit less then all host num.
+    -p, --port  port      Use port instead of defult port:22.
+    -l, --limit num       Limit num for host to run when limit less then all host num.
     -h, --help            Print this help infomation.
 
 Require:
@@ -76,33 +95,36 @@ _parse_options()
         case $1 in
             -c|--concurrent)
                 g_THREAD_NUM="${2}"
-            	shift 2
-            	;;
+                _is_number "${g_THREAD_NUM}"
+                shift 2
+                ;;
             -s|--ssh)
                 g_NOPASSWD=1
-            	shift
-            	;;
+                shift
+                ;;
             -p|--port)
                 g_PORT=${2}
-            	shift 2
-            	;;
+                _is_number "${g_PORT}"
+                shift 2
+                ;;
             -l|--limit)
                 g_LIMIT=${2}
-            	shift 2
-            	;;
+                _is_number "${g_LIMIT}"
+                shift 2
+                ;;
             -h|--help)
-            	usage
-            	exit
-            	;;
+                _usage
+                exit
+                ;;
             --)
-            	shift
+                shift
                 argv=("${argv[@]}" "${@}")
-            	break
-            	;;
+                break
+                ;;
             -*)
-            	_print_fatal "command line: unrecognized option $1" >&2
-            	return 1
-            	;;
+                _print_fatal "command line: unrecognized option $1" >&2
+                return 1
+                ;;
             *)
                 argv=("${argv[@]}" "${1}")
                 shift
@@ -118,7 +140,7 @@ _parse_options()
         0|*)
             _usage 1>&2
             return 1
-	;;
+    ;;
     esac
 }
 
@@ -198,4 +220,3 @@ done < ${g_HOST_LIST}
 rm -f ${TMPFILE}
 #trap - INT TERM EXIT
 exec 9<&-
-
