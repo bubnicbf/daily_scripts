@@ -13,3 +13,12 @@ case $ch in
     git reset --hard origin/master;;
     *)exit;;
 esac
+
+clear
+git log -n 1 --pretty="format:    %C(Yellow)%<(24,trunc)%cD %Cred%cr %Creset %s"
+git status
+
+echo
+pwd
+echo
+ls
