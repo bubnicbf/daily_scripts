@@ -53,11 +53,11 @@ _is_number() {
         number=${number//[[:space:]]/}
     fi
 
-    if ! [[ $number =~ $re ]] ; then
+    if [[ $number =~ $re ]] ; then
+        return 0
+    else
         _print_fatal "error: ${number} not a number" >&2
         exit 1
-    else
-        return 0
     fi
 }
 
@@ -96,35 +96,35 @@ _parse_options()
             -c|--concurrent)
                 g_THREAD_NUM="${2}"
                 _is_number "${g_THREAD_NUM}"
-            	shift 2
-            	;;
+                shift 2
+                ;;
             -s|--ssh)
                 g_NOPASSWD=1
-            	shift
-            	;;
+                shift
+                ;;
             -p|--port)
                 g_PORT=${2}
                 _is_number "${g_PORT}"
-            	shift 2
-            	;;
+                shift 2
+                ;;
             -l|--limit)
                 g_LIMIT=${2}
                 _is_number "${g_LIMIT}"
-            	shift 2
-            	;;
+                shift 2
+                ;;
             -h|--help)
-            	_usage
-            	exit
-            	;;
+                _usage
+                exit
+                ;;
             --)
-            	shift
+                shift
                 argv=("${argv[@]}" "${@}")
-            	break
-            	;;
+                break
+                ;;
             -*)
-            	_print_fatal "command line: unrecognized option $1" >&2
-            	return 1
-            	;;
+                _print_fatal "command line: unrecognized option $1" >&2
+                return 1
+                ;;
             *)
                 argv=("${argv[@]}" "${1}")
                 shift
@@ -140,7 +140,7 @@ _parse_options()
         0|*)
             _usage 1>&2
             return 1
-	;;
+    ;;
     esac
 }
 
@@ -228,4 +228,3 @@ wait
 rm -f ${TMPFILE}
 #trap - INT TERM EXIT
 exec 9<&-
-
