@@ -29,12 +29,12 @@ function check_mkdir() {
 
     if [ x"$dir" == "x" ]; then
         _trace "dir string is null."
-        return 1
+	    return 1
     elif [ -d "${dir}" ]; then
         _trace "dir of ${dir} is existed, skip mkdir."
         return 0
     else
-        _trace "mkdir ${dir}"
+	    _trace "mkdir ${dir}"
         mkdir -p ${dir}
         return $?
     fi
@@ -65,25 +65,25 @@ function _parse_options()
         case $1 in
             -d|--data_dir)
                 g_DATA_DIR="${2}"
-                shift 2
-                ;;
+            	shift 2
+            	;;
             -f|--file)
                 g_ELASTICSOFT="${2}"
                 shift 2
                 ;;
             -h|--help)
-                usage
-                exit
-                ;;
+            	usage
+            	exit
+            	;;
             --)
-                shift
+            	shift
                 argv=("${argv[@]}" "${@}")
-                break
-                ;;
+            	break
+            	;;
             -*)
-                _print_fatal "command line: unrecognized option $1" >&2
-                return 1
-                ;;
+            	_print_fatal "command line: unrecognized option $1" >&2
+            	return 1
+            	;;
             *)
                 argv=("${argv[@]}" "${1}")
                 shift
@@ -137,3 +137,4 @@ fi
 if [ $? -eq 0 ]; then
     sudo /sbin/chkconfig --add elasticsearch
 fi
+

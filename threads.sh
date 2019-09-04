@@ -61,6 +61,9 @@ _is_number() {
     fi
 }
 
+readlinkf() { perl -MCwd -e 'print Cwd::abs_path shift' $1;}
+# ABSPATH="$(readlinkf ./non-absolute/file)"
+
 _usage() {
     cat << USAGE
 Usage: bash ${MYNAME} [options] hostlist command.
@@ -96,35 +99,35 @@ _parse_options()
             -c|--concurrent)
                 g_THREAD_NUM="${2}"
                 _is_number "${g_THREAD_NUM}"
-                shift 2
-                ;;
+            	shift 2
+            	;;
             -s|--ssh)
                 g_NOPASSWD=1
-                shift
-                ;;
+            	shift
+            	;;
             -p|--port)
                 g_PORT=${2}
                 _is_number "${g_PORT}"
-                shift 2
-                ;;
+            	shift 2
+            	;;
             -l|--limit)
                 g_LIMIT=${2}
                 _is_number "${g_LIMIT}"
-                shift 2
-                ;;
+            	shift 2
+            	;;
             -h|--help)
-                _usage
-                exit
-                ;;
+            	_usage
+            	exit
+            	;;
             --)
-                shift
+            	shift
                 argv=("${argv[@]}" "${@}")
-                break
-                ;;
+            	break
+            	;;
             -*)
-                _print_fatal "command line: unrecognized option $1" >&2
-                return 1
-                ;;
+            	_print_fatal "command line: unrecognized option $1" >&2
+            	return 1
+            	;;
             *)
                 argv=("${argv[@]}" "${1}")
                 shift
@@ -140,7 +143,7 @@ _parse_options()
         0|*)
             _usage 1>&2
             return 1
-    ;;
+	;;
     esac
 }
 
@@ -228,3 +231,4 @@ wait
 rm -f ${TMPFILE}
 #trap - INT TERM EXIT
 exec 9<&-
+

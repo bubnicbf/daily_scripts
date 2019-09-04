@@ -108,26 +108,26 @@ _parse_options()
         case $1 in
             -s|--ssh)
                 g_NOPASSWD=1
-                shift
-                ;;
+            	shift
+            	;;
             -l|--limit)
                 g_LIMIT=${2}
                 _is_number "${g_LIMIT}"
-                shift 2
-                ;;
+            	shift 2
+            	;;
             -h|--help)
-                _usage
-                exit
-                ;;
+            	_usage
+            	exit
+            	;;
             --)
-                shift
+            	shift
                 argv=("${argv[@]}" "${@}")
-                break
-                ;;
+            	break
+            	;;
             -*)
-                _print_fatal "command line: unrecognized option $1" >&2
-                return 1
-                ;;
+            	_print_fatal "command line: unrecognized option $1" >&2
+            	return 1
+            	;;
             *)
                 argv=("${argv[@]}" "${1}")
                 shift
@@ -143,6 +143,29 @@ _parse_options()
         0|*)
             _usage 1>&2
             return 1
-    ;;
+	;;
     esac
 }
+
+#---  FUNCTION  -------------------------------------------------------------------------------------------------------
+#          NAME:  __detect_color_support
+#   DESCRIPTION:  Try to detect color support.
+#----------------------------------------------------------------------------------------------------------------------
+_COLORS=${BS_COLORS:-$(tput colors 2>/dev/null || echo 0)}
+__detect_color_support() {
+    if [ $? -eq 0 ] && [ "$_COLORS" -gt 2 ]; then
+        RC="\033[1;31m"
+        GC="\033[1;32m"
+        BC="\033[1;34m"
+        YC="\033[1;33m"
+        EC="\033[0m"
+    else
+        RC=""
+        GC=""
+        BC=""
+        YC=""
+        EC=""
+    fi
+}
+__detect_color_support
+
