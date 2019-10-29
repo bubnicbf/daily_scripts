@@ -60,12 +60,12 @@ USAGE
 function parse_options()
 {
     local argv=()
-    
+
     while [[ $# -gt 0 ]]; do
         case $1 in
             -r|--registry)
                 registry="$2"
-                _is_null "$INVENTORY"
+                _is_null "$registry"
                 shift 2
                 ;;
             -V|--version)
@@ -90,7 +90,7 @@ function parse_options()
                 shift
                 ;;
         esac
-    done 
+    done
 
     case ${#argv[@]} in
         0)
