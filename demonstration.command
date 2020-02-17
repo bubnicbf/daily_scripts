@@ -1,11 +1,11 @@
 #!/bin/bash
-# set up my desktop the way I like
+# showcase how I set up my desktop the way I like
 
 open -a "Google Chrome" "https://mail.notes.na.collabserv.com/verse";
 
 osascript <<EOD
     tell application "Spotify"
-        play track "spotify:playlist:74sUjcvpGfdOvCHvgzNEDO"
+        play track "spotify:album:2fVoMCmIU7YyPGQfaByFhf"
     end tell
     tell application "Terminal"
         do script "reach"
