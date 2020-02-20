@@ -2,9 +2,9 @@
 " 一般设定
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " 将 pathogen 自身也置于独立目录中，需指定其路径 
-runtime bundle/pathogen/autoload/pathogen.vim
+"runtime bundle/pathogen/autoload/pathogen.vim
 " 运行 pathogen
-execute pathogen#infect()
+"execute pathogen#infect()
 
 " 设定默认解码
 set fenc=utf-8
@@ -15,7 +15,7 @@ set fencs=utf-8,usc-bom,euc-jp,gb18030,gbk,gb2312,cp936
 set guifont=Nimbus\ Mono\ L\ Regular\ Oblique\ 10
 syntax enable
 set background=light
-colorscheme solarized
+"colorscheme solarized
 "colorscheme evening
 
 let mapleader=","
@@ -301,19 +301,19 @@ inoremap <expr><C-U>  pumvisible()?"\<C-E>":"\<C-U>"
 inoremap <expr><Space>  pumvisible()?"\<Down>":"\<Space>"
 
 if has("cscope")
-		set csprg=/usr/bin/cscope
-		set csto=0
-		set cst
-		set nocsverb
-		" add any database in current directory
-		if filereadable("cscope.out")
-		    cs add cscope.out
-		" else add database pointed to by environment
-		elseif $CSCOPE_DB != ""
-		    cs add $CSCOPE_DB
-		endif
-		set csverb
-	endif
+        set csprg=/usr/bin/cscope
+        set csto=0
+        set cst
+        set nocsverb
+        " add any database in current directory
+        if filereadable("cscope.out")
+            cs add cscope.out
+        " else add database pointed to by environment
+        elseif $CSCOPE_DB != ""
+            cs add $CSCOPE_DB
+        endif
+        set csverb
+    endif
 
 set cscopequickfix=s-,c-,d-,i-,t-,e-
 
@@ -346,19 +346,19 @@ nmap <C-Space>d :scs find d <C-R>=expand("<cword>")<CR><CR>
 " split instead of a horizontal one
 
 nmap <C-Space><C-Space>s
-	\:vert scs find s <C-R>=expand("<cword>")<CR><CR>
+    \:vert scs find s <C-R>=expand("<cword>")<CR><CR>
 nmap <C-Space><C-Space>g
-	\:vert scs find g <C-R>=expand("<cword>")<CR><CR>
+    \:vert scs find g <C-R>=expand("<cword>")<CR><CR>
 nmap <C-Space><C-Space>c
-	\:vert scs find c <C-R>=expand("<cword>")<CR><CR>
+    \:vert scs find c <C-R>=expand("<cword>")<CR><CR>
 nmap <C-Space><C-Space>t
-	\:vert scs find t <C-R>=expand("<cword>")<CR><CR>
+    \:vert scs find t <C-R>=expand("<cword>")<CR><CR>
 nmap <C-Space><C-Space>e
-	\:vert scs find e <C-R>=expand("<cword>")<CR><CR>
+    \:vert scs find e <C-R>=expand("<cword>")<CR><CR>
 nmap <C-Space><C-Space>i
-	\:vert scs find i ^<C-R>=expand("<cfile>")<CR>$<CR>
+    \:vert scs find i ^<C-R>=expand("<cfile>")<CR>$<CR>
 nmap <C-Space><C-Space>d
-	\:vert scs find d <C-R>=expand("<cword>")<CR><CR>
+    \:vert scs find d <C-R>=expand("<cword>")<CR><CR>
 
 function UpdateCtags()
     let curdir=getcwd()
@@ -449,3 +449,8 @@ source $VIMRUNTIME/menu.vim
 :map \9 bi(<Esc>ea)<Esc>
 :map \[ bi[<Esc>ea]<Esc>
 :map \{ bi{<Esc>ea}<Esc>
+
+" w!! to sudo & write a file
+cmap w!! w !sudo tee >/dev/null %
+
+autocmd VimLeave * exe "! ls"
