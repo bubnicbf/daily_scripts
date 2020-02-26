@@ -74,37 +74,37 @@ parse_options() {
         case $1 in
             -c)
                 CONFFILE="${2}"
-            	shift 2
-            	;;
+                shift 2
+                ;;
             -t|--type)
                 DISPTYPE="${2}"
-            	shift 2
-            	;;
+                shift 2
+                ;;
             -l|-o)
                 LOGFILE="${2}"
-            	shift 2
-            	;;
+                shift 2
+                ;;
             -P|--pid)
                 PIDFILE="${2}"
-            	shift 2
-            	;;
+                shift 2
+                ;;
             -h|--help)
-            	usage
-            	exit
-            	;;
+                usage
+                exit
+                ;;
             -d|--debug)
-            	DEBUG=1
-            	shift
-            	;;
+                DEBUG=1
+                shift
+                ;;
             --)
-            	shift
+                shift
                 argv=("${argv[@]}" "${@}")
-            	break
-            	;;
+                break
+                ;;
             -*)
-            	echo "command line: unrecognized option $1" >&2
-            	return 1
-            	;;
+                echo "command line: unrecognized option $1" >&2
+                return 1
+                ;;
             *)
                 argv=("${argv[@]}" "${1}")
                 shift
@@ -119,7 +119,7 @@ parse_options() {
         0|*)
             usage 1>&2
             return 1
-	;;
+    ;;
     esac
 }
 
@@ -142,9 +142,9 @@ start() {
     echo -n $"Starting $PROG: "
     # if not running, start it up here, usually something like "daemon $exec"
     if [ x"$DEBUG" == "x" ]; then
-        daemon ${PYTHON} ${EXEC} -c ${CONFFILE} -t ${DISPTYPE} -P ${PIDFILE} -D -l ${LOGFILE}
+        daemon ${PYTHON} ${EXEC} -c ${CONFFILE} -t ${DISPTYPE} -P ${PIDFILE} -D -l ${LOGFILE} &
     else
-        daemon ${PYTHON} ${EXEC} -c ${CONFFILE} -t ${DISPTYPE} -P ${PIDFILE} -D -l ${LOGFILE} -d
+        daemon ${PYTHON} ${EXEC} -c ${CONFFILE} -t ${DISPTYPE} -P ${PIDFILE} -D -l ${LOGFILE} -d &
     fi
     retval=$?
     echo
@@ -248,4 +248,3 @@ case "${ACTION}" in
         exit 2
 esac
 exit $?
-
