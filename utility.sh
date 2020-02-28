@@ -108,26 +108,26 @@ _parse_options()
         case $1 in
             -s|--ssh)
                 g_NOPASSWD=1
-            	shift
-            	;;
+                shift
+                ;;
             -l|--limit)
                 g_LIMIT=${2}
                 _is_number "${g_LIMIT}"
-            	shift 2
-            	;;
+                shift 2
+                ;;
             -h|--help)
-            	_usage
-            	exit
-            	;;
+                _usage
+                exit
+                ;;
             --)
-            	shift
+                shift
                 argv=("${argv[@]}" "${@}")
-            	break
-            	;;
+                break
+                ;;
             -*)
-            	_print_fatal "command line: unrecognized option $1" >&2
-            	return 1
-            	;;
+                _print_fatal "command line: unrecognized option $1" >&2
+                return 1
+                ;;
             *)
                 argv=("${argv[@]}" "${1}")
                 shift
@@ -143,7 +143,7 @@ _parse_options()
         0|*)
             _usage 1>&2
             return 1
-	;;
+    ;;
     esac
 }
 
@@ -169,3 +169,23 @@ __detect_color_support() {
 }
 __detect_color_support
 
+
+########################################################################
+# set DOITPROG to echo to test this script
+
+# Don't use :- since 4.3BSD and earlier shells don't like it.
+doit="${DOITPROG-}"
+
+# Make a couple of temp file names in the proper directory.
+
+    dsttmp=/tmp/#inst.$$#
+    rmtmp=/tmp/#rm.$$#
+
+# Trap to clean up temp files at exit.
+
+    trap 'status=$?; rm -f "$dsttmp" "$rmtmp" && exit $status' 0
+    trap '(exit $?); exit' 1 2 13 15
+
+# Move or copy the file name to the temp name
+
+#    $doit cp "$src" "$dsttmp" &&
