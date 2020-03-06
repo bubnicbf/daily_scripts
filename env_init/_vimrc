@@ -51,8 +51,8 @@ set fdm=indent
 set history=100
 
 set cc=80
-set cursorline
-set cursorcolumn
+"set cursorline
+"set cursorcolumn
 let g:indent_guides_guide_size=1
 
 " 在处理未保存或只读文件的时候，弹出确认
@@ -498,9 +498,9 @@ function! LoadSession()
 endfunction
 
 " Adding automatons for when entering or leaving Vim
-au VimEnter * nested :call LoadSession()
-au VimLeave * :call MakeSession()
+"au VimEnter * nested :call LoadSession()
+"au VimLeave * :call MakeSession()
 "---------------------------------------------------------------
 
 let g:go_disable_autoinstall = 0
-let g:neocomplete#enable_at_startup = 1
+"let g:neocomplete#enable_at_startup = 1
