@@ -284,6 +284,11 @@ sed -i '/xxxxxx/,/yyyyyy/d' file
 #   github pull request
 #git clone git recursive.
 #   git clone --recursive https://github.com/XiaoMi/open-falcon.git
+#   git pull --recurse-submodules
+#
+#git su
+#   git submodule add https://github.com/XiaoMi/open-falcon.git open-falcon
+#   git submodule update --init --recursive
 
 #screen -c ~/.screenrc -D -RR screenname
 #screen -drUA screenname
@@ -302,3 +307,5 @@ sed -i '/xxxxxx/,/yyyyyy/d' file
 #python -m py_compile *.py
 #python -m compileall dirname
 #python -m pdb *.py
+
+#/usr/local/bin/inotifywait -mrq --timefmt %d/%m/%y %H:%M --format %T %w%f -e modify,delete,create,attrib /etc/sysctl.conf
