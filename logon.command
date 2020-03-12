@@ -15,7 +15,6 @@ open /Applications/Statusfy.app;
 open /Applications/Slack.app;
 open /Applications/DBeaver.app;
 open /Applications/Sublime\ Text.app;
-open /Applications/Cisco/Cisco\ AnyConnect\ Secure\ Mobility\ Client.app;
 
 osascript <<EOD
     tell application "Messages"
@@ -38,7 +37,8 @@ osascript <<EOD
     end tell
 EOD
 
-source /Users/ben.bubnick/Documents/pass.properties; echo -n $ADPASS | pbcopy;
+open /Applications/Cisco/Cisco\ AnyConnect\ Secure\ Mobility\ Client.app;
+source ~/projects/chunichi_dragons/nagoya.properties; echo -n $AD | pbcopy;
 
 osascript <<EOD
     tell application "System Events" to tell process "DBeaver"
