@@ -1,5 +1,10 @@
 #!/bin/sh -e
 
+# sends a text message "late at work" to wife. 
+# Automatically picks reasons from an array of strings, randomly. 
+# Runs inside a cron-job. The job fires if there are active 
+# SSH-sessions on the server after 9pm with login.
+
 # Exit early if no sessions with my username are found
 if ! who | grep -wq $USER; then
   exit
