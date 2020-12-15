@@ -5,6 +5,7 @@ open -a "Google Chrome" "https://vbc-confluence.watson-health.ibm.com/spaces/vie
 open /Applications/IBM\ Firefox.app;
 open /Applications/Slack.app;
 open /Applications/Sublime\ Text.app;
+open /Applications/Todoist.app;
 
 osascript <<EOD
     tell application "Terminal"
