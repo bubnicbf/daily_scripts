@@ -13,7 +13,7 @@ osascript <<EOD
     end tell
     tell application "Spotify"
         activate
-        play track "spotify:playlist:37i9dQZF1DWZv6UE8BMPO0"
+        play track "spotify:playlist:37i9dQZF1DXc8kgYqQLMfH"
     end tell     
 EOD
 
