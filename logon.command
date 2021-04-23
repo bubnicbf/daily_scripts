@@ -21,6 +21,7 @@ rando_spotify () {
     playlistlist[4]="37i9dQZF1DWYoYGBbGKurt"
     playlistlist[5]="37i9dQZF1DX0SM0LYsmbMT"
     playlistlist[6]="37i9dQZF1DXaf6XmhwlgC6"
+    playlistlist[7]="37i9dQZF1E38S1a4SY2jsZ"
 
     size=${#playlistlist[@]}
     index=$(($RANDOM % $size))
