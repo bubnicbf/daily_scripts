@@ -43,10 +43,6 @@ osascript <<EOD
     tell application "Terminal"
         do script "projects"
     end tell
-    tell application "Spotify"
-        activate
-        play track "spotify:playlist:$(rando_spotify)"
-    end tell
     tell application "Amphetamine"
         start new session with options {duration:$(time_until_eod), interval:minutes, displaySleepAllowed:false}
     end tell
