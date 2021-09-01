@@ -33,7 +33,7 @@ open -a "Google Chrome" "https://vbc-jira.watson-health.ibm.com/issues/?jql=assi
 open -a "Google Chrome" "https://vbc-jira.watson-health.ibm.com/secure/Dashboard.jspa?selectPageId=20586";
 
 # Open apps I use daily
-open /Applications/IBM\ Firefox.app;
+open /Applications/Firefox.app;
 open /Applications/Slack.app;
 open /Applications/Sublime\ Text.app;
 open /Applications/Todoist.app;
