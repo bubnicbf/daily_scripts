@@ -50,4 +50,4 @@ EOD
 
 # Open this one last
 open /Applications/Cisco/Cisco\ AnyConnect\ Secure\ Mobility\ Client.app;
-source ~/projects/chunichi_dragons/nagoya.properties; echo -n $AD | pbcopy;
+source ~/projects/chunichi_dragons/nagoya.properties; echo -n $ADP | pbcopy;
