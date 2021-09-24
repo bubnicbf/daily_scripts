@@ -32,13 +32,6 @@ rando_spotify () {
 open -a "Google Chrome" "https://vbc-jira.watson-health.ibm.com/issues/?jql=assignee%20%3D%20%22bfbubnic%40us.ibm.com%22%20AND%20resolution%20%3D%20Unresolved%20and%20status%20!%3D%20Blocked%20order%20by%20updated%20desc";
 open -a "Google Chrome" "https://vbc-jira.watson-health.ibm.com/secure/Dashboard.jspa?selectPageId=20586";
 
-# Open time tracker on Mondays & Fridays, Checkpoint on Thursdays
-if [[ $(date +%u) = 1 ]] || [[ $(date +%u) = 5 ]]
-then
-    open -a "Google Chrome" "https://time.ibm.com/week"
-elif [[ $(date +%u) = 4 ]]
-    open -a "Google Chrome" "https://cloud.workhuman.com/conversations/?client=ibmcorp&setCAG=true#!/dashboard/ibmcorp/14499315"
-fi
 
 # Open apps I use daily
 open /Applications/Firefox.app;
