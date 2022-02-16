@@ -29,9 +29,9 @@ rando_spotify () {
 }
 
 # Open various dashboards in Chrome
-open -a "Google Chrome" "https://vbc-jira.watson-health.ibm.com/issues/?jql=assignee%20%3D%20%22bfbubnic%40us.ibm.com%22%20AND%20resolution%20%3D%20Unresolved%20and%20status%20!%3D%20Blocked%20order%20by%20updated%20desc";
-open -a "Google Chrome" "https://vbc-jira.watson-health.ibm.com/secure/Dashboard.jspa?selectPageId=20586";
 open -a "Google Chrome" "https://time.ibm.com/week";
+open -a "Google Chrome" "https://vbc-jira.watson-health.ibm.com/secure/Dashboard.jspa?selectPageId=20586";
+open -a "Google Chrome" "https://vbc-jira.watson-health.ibm.com/issues/?jql=assignee%20%3D%20%22bfbubnic%40us.ibm.com%22%20AND%20resolution%20%3D%20Unresolved%20and%20status%20!%3D%20Blocked%20order%20by%20updated%20desc";
 open -a "Google Chrome" "https://trello.com/b/HmMYP6Nc/11-ben-bubnick-harishitha";
 
 # Open apps I use daily
