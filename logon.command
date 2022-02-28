@@ -39,6 +39,7 @@ open /Applications/Firefox.app;
 open /Applications/Slack.app;
 open /Applications/Sublime\ Text.app;
 open /Applications/Todoist.app;
+open /Applications/Microsoft\ Outlook.app;
 
 # Open apps I use daily (but need special instructions)
 osascript <<EOD
