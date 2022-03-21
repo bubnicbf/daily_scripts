@@ -35,7 +35,6 @@ open -a "Google Chrome" "https://vbc-jira.watson-health.ibm.com/issues/?jql=assi
 open -a "Google Chrome" "https://trello.com/b/HmMYP6Nc/11-ben-bubnick-harishitha";
 
 # Open apps I use daily
-open /Applications/Firefox.app;
 open /Applications/Slack.app;
 open /Applications/Sublime\ Text.app;
 open /Applications/Todoist.app;
