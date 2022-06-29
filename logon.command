@@ -29,8 +29,7 @@ rando_spotify () {
 }
 
 # Open various dashboards in Chrome
-open -a "Google Chrome" "https://time.ibm.com/week";
-open -a "Google Chrome" "https://trello.com/b/HmMYP6Nc/11-ben-bubnick-harishitha";
+open -a "Google Chrome" "https://merative-my.sharepoint.com/:x:/p/dsebastian/EVFnwnW0BZhAhfTuwMeS49IB3Bg-u-WLPqIrgmuVOQhOHg?e=e7fGKi";
 open -a "Google Chrome" "https://watsonhealth.monday.com/boards/2802538597";
 
 # Open apps I use daily
