@@ -33,7 +33,7 @@ open -a "Google Chrome" "https://merative-my.sharepoint.com/:x:/p/dsebastian/EVF
 open -a "Google Chrome" "https://watsonhealth.monday.com/boards/2802538597";
 
 # Open apps I use daily
-open /Applications/Slack.app;
+open /Applications/Microsoft\ Teams.app
 open /Applications/Sublime\ Text.app;
 open /Applications/Todoist.app;
 open /Applications/Microsoft\ Outlook.app;
