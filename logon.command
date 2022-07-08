@@ -47,7 +47,3 @@ osascript <<EOD
         start new session with options {duration:$(time_until_eod), interval:minutes, displaySleepAllowed:false}
     end tell
 EOD
-
-# Open this one last
-open /Applications/Cisco/Cisco\ AnyConnect\ Secure\ Mobility\ Client.app;
-source ~/projects/chunichi_dragons/nagoya.properties; echo -n $ADP | pbcopy;
