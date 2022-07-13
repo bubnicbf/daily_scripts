@@ -33,10 +33,11 @@ open -a "Google Chrome" "https://merative-my.sharepoint.com/:x:/p/dsebastian/EVF
 open -a "Google Chrome" "https://merative.monday.com/boards/2802538597/views/65573269";
 
 # Open apps I use daily
+open /System/Applications/Messages.app
+open /Applications/Microsoft\ Outlook.app;
 open /Applications/Microsoft\ Teams.app
 open /Applications/Sublime\ Text.app;
 open /Applications/Todoist.app;
-open /Applications/Microsoft\ Outlook.app;
 
 # Open apps I use daily (but need special instructions)
 osascript <<EOD
