@@ -15,4 +15,4 @@ done
 
 az account set --subscription db82c7b1-ac93-45f1-9fb1-c26407a2dabb
 az aks get-credentials --resource-group hdp-dev-eastus2-compute --name whpa-hdp-hdpdev
-kubectl port-forward svc/whpa-fhir 9080:9080 -n hdpperf
+kubectl port-forward svc/whpa-fhir 9080:9080 -n hdp100
