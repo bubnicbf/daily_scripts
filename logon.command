@@ -48,3 +48,4 @@ EOD
 # Open various dashboards in Chrome
 open -a "Google Chrome" "https://merative-my.sharepoint.com/:x:/p/dsebastian/EVFnwnW0BZhAhfTuwMeS49IB3Bg-u-WLPqIrgmuVOQhOHg?e=e7fGKi";
 open -a "Google Chrome" "https://merative.monday.com/boards/2802538597/views/65573269";
+open -a "Google Chrome" "https://confluence.wh-sdlc.watson-health.ibm.com/display/METL/IHM";
