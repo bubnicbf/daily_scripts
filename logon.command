@@ -14,14 +14,14 @@ time_until_eod () {
 
 # Pick a random spotify from my favorites list
 rando_spotify () {
-    playlistlist[0]="37i9dQZF1E39hBTio44x3B"
-    playlistlist[1]="37i9dQZF1E35TbUW8AyH92"
-    playlistlist[2]="37i9dQZF1E351NFGzFy1ar"
-    playlistlist[3]="37i9dQZF1E38cwp812py2i"
-    playlistlist[4]="37i9dQZF1DWYoYGBbGKurt"
-    playlistlist[5]="37i9dQZF1DX0SM0LYsmbMT"
-    playlistlist[6]="37i9dQZF1DXaf6XmhwlgC6"
-    playlistlist[7]="37i9dQZF1E38S1a4SY2jsZ"
+    playlist[0]="37i9dQZF1E39hBTio44x3B"
+    playlist[1]="37i9dQZF1E35TbUW8AyH92"
+    playlist[2]="37i9dQZF1E351NFGzFy1ar"
+    playlist[3]="37i9dQZF1E38cwp812py2i"
+    playlist[4]="37i9dQZF1DWYoYGBbGKurt"
+    playlist[5]="37i9dQZF1DX0SM0LYsmbMT"
+    playlist[6]="37i9dQZF1DXaf6XmhwlgC6"
+    playlist[7]="37i9dQZF1E38S1a4SY2jsZ"
 
     size=${#playlistlist[@]}
     index=$(($RANDOM % $size))
