@@ -42,6 +42,5 @@ osascript <<EOD
     end tell
     tell application "Terminal"
         do script "projects"
-        do script "dashboards"
     end tell
 EOD
