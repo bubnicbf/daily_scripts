@@ -38,5 +38,5 @@ open -a "Google Chrome" "https://merative-my.sharepoint.com/:x:/p/dsebastian/EVF
 # open -a "Google Chrome" "https://jira.wh-sdlc.watson-health.ibm.com/issues/?jql=assignee%20%3D%20\"bbubnick%40merative.com\"%20AND%20status%20not%20in%20(Resolved%2C%20Closed)%20ORDER%20BY%20priority%2C%20updated%20DESC";
 
 # Longitudinal Study
-open -a "Google Chrome" "https://merative-my.sharepoint.com/personal/bbubnick_merative_com/_layouts/15/onedrive.aspx?id=%2Fpersonal%2Fbbubnick%5Fmerative%5Fcom%2FDocuments%2FIHM%2FLongitudinal%20Study"
+open -a "Google Chrome" "https://merative-my.sharepoint.com/:f:/p/bbubnick/EpFvv-JfGNRDqQwbhLOw6eMBUBdfn7JtUVtwZTYxjAnI9g?e=zDV3BS"
 
