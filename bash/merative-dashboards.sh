@@ -40,3 +40,12 @@ open -a "Google Chrome" "https://merative-my.sharepoint.com/:x:/p/dsebastian/EVF
 # Longitudinal Study
 # open -a "Google Chrome" "https://merative-my.sharepoint.com/:f:/p/bbubnick/EpFvv-JfGNRDqQwbhLOw6eMBUBdfn7JtUVtwZTYxjAnI9g?e=zDV3BS"
 
+# OMOP Mapping
+	# External 
+	open -a "Google Chrome" "https://merative.sharepoint.com/:x:/r/sites/MarketscanClinical/_layouts/15/Doc.aspx?sourcedoc=%7B86C76C9E-651D-4A31-AC6B-D0C7C0817A0D%7D&file=EXTERNAL%20Explorys_Delivered_Sandbox_SM_Data.xlsx&action=default&mobileredirect=true"
+	# Internal
+	# open -a "Google Chrome" "https://merative.sharepoint.com/:x:/r/sites/MarketscanClinical/_layouts/15/Doc.aspx?sourcedoc=%7B39E3F7FE-FB79-4DAC-A0B3-13DD3CC3099D%7D&file=INTERNAL%20ONLY%20Explorys_Delivered_Sandbox_SM_Data.xlsx&action=default&mobileredirect=true"
+	# OMOP mapping spec
+	open -a "Google Chrome" "https://merative.sharepoint.com/:x:/r/sites/MarketscanClinical/_layouts/15/Doc.aspx?sourcedoc=%7B331F15CB-0BE5-412B-B62E-09096C2F2F45%7D&file=OMOP_Mapping_Spec.xlsx&action=default&mobileredirect=true"
+	# Athena site to find the correct NUCC codes
+	open -a "Google Chrome" "https://athena.ohdsi.org/search-terms/terms?domain=Provider&standardConcept=Standard&page=1&pageSize=15&query=&boosts"
