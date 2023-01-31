@@ -50,4 +50,4 @@ open -a "Google Chrome" "https://merative-my.sharepoint.com/:x:/p/dsebastian/EVF
 	# Athena site to find the correct NUCC codes
 	# open -a "Google Chrome" "https://athena.ohdsi.org/search-terms/terms?domain=Provider&standardConcept=Standard&page=1&pageSize=15&query=&boosts"
 	# ETl Doc
-	open -a "Google Chrome" "https://github.com/watson-health-metl/documentation/tree/omop_etl/Customers/EXPLORYS_DELIVERED/CustomDocs"
+	open -a "Google Chrome" "https://github.com/watson-health-metl/documentation/blob/master/Customers/EXPLORYS_DELIVERED/CustomDocs/etl_spec.md"
