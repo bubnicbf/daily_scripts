@@ -1,5 +1,3 @@
-# DO NOT USE THIS, IT IS VERY OLD!
-
 #!/bin/bash
 
 fqdn=sso-demo.test.ibmcloud.com
